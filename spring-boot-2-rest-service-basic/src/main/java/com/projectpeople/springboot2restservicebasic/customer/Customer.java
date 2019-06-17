@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * An entity to represent the Customer in the database
+ */
 @Entity
 public class Customer {
     @Id

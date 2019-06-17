@@ -14,6 +14,13 @@ public class SearchServiceImp implements SearchService {
     @Autowired
     private BookRepository bookRepository;
 
+    /**
+     * Implemented search method
+     * This searches through all stored books, returning any books that have the search term in the title
+     * or in the otherDetails
+     * @param term
+     * @return a list of books that match the search term
+     */
     @Override
     public List<Book> search(String term) {
         term = term.toLowerCase();

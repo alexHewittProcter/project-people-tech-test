@@ -9,12 +9,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The implemented service for all the borrow functionality
+ */
 @Service
 public class BorrowServiceImp implements BorrowService{
 
     @Autowired
     LoanRepository loanRepository;
 
+    /**
+     * Used to borrow a book, first checking that the book is not already borrowed
+     * @param bookId
+     * @param borrowerId
+     * @param returnDate
+     * @return a string with the outcome
+     */
     @Override
     public String borrow(int bookId, int borrowerId, Date returnDate) {
 
@@ -35,6 +45,12 @@ public class BorrowServiceImp implements BorrowService{
         return "Borrowed";
     }
 
+    /**
+     * Used to return a book using the bookId and borrowerId
+     * @param bookId
+     * @param borrowerId
+     * @return the Loan object
+     */
     @Override
     public Loan returnBook(int bookId, int borrowerId) {
         List<Loan> loans = loanRepository.findAll();
@@ -49,6 +65,11 @@ public class BorrowServiceImp implements BorrowService{
         return null;
     }
 
+    /**
+     * Gets all the loans for books that are unreturned for a specific customer
+     * @param customerId
+     * @return a list of books that have not been returned for a customer
+     */
     @Override
     public List<Loan> customerLoans(int customerId) {
         List<Loan> allLoans = loanRepository.findAll();

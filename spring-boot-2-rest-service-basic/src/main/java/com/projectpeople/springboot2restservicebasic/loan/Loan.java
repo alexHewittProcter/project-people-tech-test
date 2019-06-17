@@ -3,6 +3,9 @@ package com.projectpeople.springboot2restservicebasic.loan;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * An entity class used to represent a loan in the database
+ */
 @Entity
 public class Loan {
     @Id
