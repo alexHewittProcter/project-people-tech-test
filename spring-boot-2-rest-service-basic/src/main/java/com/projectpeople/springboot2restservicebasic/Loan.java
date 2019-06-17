@@ -7,7 +7,7 @@ import java.util.Date;
 public class Loan {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private int borrowerId;
     private int bookId;
     @Temporal(TemporalType.DATE)

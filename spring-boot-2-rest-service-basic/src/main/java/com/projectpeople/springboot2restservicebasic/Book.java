@@ -8,8 +8,8 @@ import javax.persistence.Id;
 public class Book {
     @Id
     @GeneratedValue
-    private int id;
-    private String title;
-    private String isbn;
-    private String otherDetails;
+    public long id;
+    public String title;
+    public String isbn;
+    public String otherDetails;
 }
